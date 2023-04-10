@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\HiLowController;
 use App\Http\Controllers\RequestSampleController;
 use App\Http\Controllers\UtilityController;
 use Illuminate\Support\Facades\Route;
@@ -52,3 +53,7 @@ Route::post('/login', [RequestSampleController::class, 'login'])->name('login');
 
 // イベント
 Route::resource('/events', EventController::class)->only(['create', 'store']);
+
+// ハイアンドローゲーム
+Route::get('/hi-low', [HiLowController::class, 'index'])->name('hi-low');
+Route::post('/hi-low', [HiLowController::class, 'result']);

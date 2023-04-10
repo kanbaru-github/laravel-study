@@ -28,8 +28,9 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+		$title = $request->get('title');
         Log::debug('イベント名: '.$request->get('title'));
-		return to_route('events.create');
+		return to_route('events.create')->with('success', "{$title}を登録しました");
     }
 
     /**
