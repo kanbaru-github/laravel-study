@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\RequestSampleController;
 use App\Http\Controllers\UtilityController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,3 +38,17 @@ Route::get('/omikuji', [GameController::class, 'omikuji']);
 
 // モンティ・ホール問題
 Route::get('/monty-hall', [GameController::class, 'montyHall']);
+
+// リクエスト
+Route::get('/form', [RequestSampleController::class, 'form']);
+Route::get('/query-strings', [RequestSampleController::class, 'queryStrings']);
+Route::get('/users/{id}', [RequestSampleController::class, 'profile'])->name('profile');
+Route::get('/products/{category}/{year}', [RequestSampleController::class, 'productsArchive']);
+Route::get('/route-link', [RequestSampleController::class, 'routeLink']);
+
+// ログイン
+Route::get('/login', [RequestSampleController::class, 'loginForm']);
+Route::post('/login', [RequestSampleController::class, 'login'])->name('login');
+
+// イベント
+Route::resource('/events', EventController::class)->only(['create', 'store']);

@@ -11,3 +11,13 @@ Dockerのセキュリティ機能であるDOCKER_CONTENT_TRUST（DCT）を無効
 ```bash
 $ export DOCKER_CONTENT_TRUST=0
 ```
+
+- こちらでショートカットを設定したので
+```bash
+echo "alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'" >> ~/.zshrc
+exec $SHELL -l
+```
+こちらで起動
+```bash
+% sail up -d
+```
