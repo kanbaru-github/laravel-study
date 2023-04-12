@@ -21,3 +21,9 @@ exec $SHELL -l
 ```bash
 % sail up -d
 ```
+こちらで停止(コンテナを削除)
+```bash
+% sail down
+```
+
+- Githubのリポジトリ画面で「.」をクリックしてエディタで確認可能
