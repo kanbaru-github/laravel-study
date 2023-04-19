@@ -35,7 +35,7 @@ Route::prefix('/admin')
 			->group(function() {
 				// ブログ
 				Route::resource('/blogs', AdminBlogController::class)->except('show');
-		
+
 				Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 			});
 		// 未ログイン時のみアクセス可能
@@ -50,3 +50,6 @@ Route::prefix('/admin')
 // ユーザー管理
 Route::get('/admin/users/create', [UserController::class, 'create'])->name('admin.users.create');
 Route::post('/admin/users', [UserController::class, 'store'])->name('admin.users.store');
+
+// sandbox
+Route::get('/sandbox', [SandboxController::class, 'index']);
