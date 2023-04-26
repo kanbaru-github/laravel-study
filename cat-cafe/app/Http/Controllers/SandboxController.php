@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Blog;
 use Illuminate\Http\Request;
 
-class BlogController extends Controller
+class SandboxController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        
+        return view();
     }
 
     /**
@@ -34,7 +33,7 @@ class BlogController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Blog $blog)
+    public function show(string $id)
     {
         //
     }
@@ -42,7 +41,7 @@ class BlogController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Blog $blog)
+    public function edit(string $id)
     {
         //
     }
@@ -50,7 +49,7 @@ class BlogController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Blog $blog)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +57,7 @@ class BlogController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Blog $blog)
+    public function destroy(string $id)
     {
         //
     }
